@@ -43,8 +43,7 @@ class OrderPage(BasePage):
     @allure.step('Ввод даты когда привезти самокат')
     def date_delivery(self, date):
         self.send_keys_to_input((By.XPATH, OrderPageLocators.DATE), date)
-        element = self.driver.find_element(By.XPATH, OrderPageLocators.DATE)
-        element.send_keys(Keys.ENTER)
+        self.send_keys_to_input((By.XPATH, OrderPageLocators.DATE), Keys.ENTER)
 
 
     @allure.step('Срок аренды')
